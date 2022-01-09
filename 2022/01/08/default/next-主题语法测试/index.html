@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.2","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="对 hexo next 主题支持的 markdown 语法以及 Echarts 插件支持的绘图语法进行了整理与测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NexT 主题语法测试">
+<meta property="og:url" content="http://example.com/2022/01/08/default/next-%E4%B8%BB%E9%A2%98%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:site_name" content="ZLLZ4&#39;s Blog">
+<meta property="og:description" content="对 hexo next 主题支持的 markdown 语法以及 Echarts 插件支持的绘图语法进行了整理与测试">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png">
+<meta property="og:image" content="http://example.com/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png">
+<meta property="og:image" content="http://example.com/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png">
+<meta property="og:image" content="http://example.com/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png">
+<meta property="article:published_time" content="2022-01-08T14:53:51.000Z">
+<meta property="article:modified_time" content="2022-01-09T06:10:01.276Z">
+<meta property="article:author" content="zllz4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png">
+
+
+<link rel="canonical" href="http://example.com/2022/01/08/default/next-%E4%B8%BB%E9%A2%98%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/01/08/default/next-%E4%B8%BB%E9%A2%98%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95/","path":"2022/01/08/default/next-主题语法测试/","title":"NexT 主题语法测试"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>NexT 主题语法测试 | ZLLZ4's Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">ZLLZ4's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-目录"><a href="/content/" rel="section"><i class="fa fa-bars fa-fw"></i>目录</a></li>
+        <li class="menu-item menu-item-默认"><a href="/content/default/" rel="section"><i class="fa fa-circle fa-fw"></i>默认</a></li>
+        <li class="menu-item menu-item-hevc-notes"><span class="exturl" data-url="aHR0cHM6Ly96bGx6NC5naXRodWIuaW8vSEVWQy1ub3Rlcy8="><i class="fa fa-film fa-fw"></i>HEVC-notes</span></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-%E7%9B%B8%E5%85%B3%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">1 Markdown 相关语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">一级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">二级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.1.</span> <span class="nav-text">三级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">四级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.1.1.1.</span> <span class="nav-text">五级标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%85%AD%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="nav-number">2.1.1.1.1.1.</span> <span class="nav-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">2.4.</span> <span class="nav-text">1.4 表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="nav-number">2.5.</span> <span class="nav-text">1.5 图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E9%93%BE"><span class="nav-number">2.6.</span> <span class="nav-text">1.6 外链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9D%97%E5%BC%95%E7%94%A8"><span class="nav-number">2.7.</span> <span class="nav-text">1.7 块引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">2.8.</span> <span class="nav-text">1.8 代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">2.9.</span> <span class="nav-text">1.9 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">2.10.</span> <span class="nav-text">1.10 数学公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-%E7%89%B9%E8%89%B2%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">2 Hexo 特色语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9D%97%E5%BC%95%E7%94%A8%E6%94%AF%E6%8C%81%E4%BD%9C%E8%80%85%E9%93%BE%E6%8E%A5"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 块引用（支持作者&#x2F;链接）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E6%94%AF%E6%8C%81%E6%96%87%E4%BB%B6%E5%90%8D%E9%93%BE%E6%8E%A5"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 代码块（支持文件名&#x2F;链接）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iframe"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 iframe</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#next-%E4%B8%BB%E9%A2%98%E7%89%B9%E8%89%B2%E8%AF%AD%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">3 NexT 主题特色语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%BF%83%E5%BC%95%E7%94%A8%E6%96%B0%E7%9A%84%E5%9D%97%E5%BC%95%E7%94%A8%E6%A0%B7%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 中心引用（新的块引用样式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E9%A2%91"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E9%92%AE"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#caniuse"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 Caniuse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#group-pictures"><span class="nav-number">4.5.</span> <span class="nav-text">3.5 Group Pictures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#label"><span class="nav-number">4.6.</span> <span class="nav-text">3.6 Label</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#link-grid"><span class="nav-number">4.7.</span> <span class="nav-text">3.7 Link Grid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mermaid"><span class="nav-number">4.8.</span> <span class="nav-text">3.8 Mermaid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#note"><span class="nav-number">4.9.</span> <span class="nav-text">3.9 Note</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pdf"><span class="nav-number">4.10.</span> <span class="nav-text">3.10 PDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tabs"><span class="nav-number">4.11.</span> <span class="nav-text">3.11 Tabs</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#echarts-%E5%9B%BE%E8%A1%A8%E7%BB%98%E5%88%B6%E8%AF%AD%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">4 Echarts 图表绘制语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%B1%E7%8A%B6%E5%9B%BE"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 柱状图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%98%E7%BA%BF%E5%9B%BE"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 折线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A5%BC%E5%9B%BE"><span class="nav-number">5.3.</span> <span class="nav-text">4.3 饼图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%A3%E7%82%B9%E5%9B%BE"><span class="nav-number">5.4.</span> <span class="nav-text">4.4 散点图</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zllz4"
+      src="https://avatars.githubusercontent.com/u/38122008?v=4">
+  <p class="site-author-name" itemprop="name">zllz4</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3psbHo0" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zllz4"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL3psbHo0" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/08/default/next-%E4%B8%BB%E9%A2%98%E8%AF%AD%E6%B3%95%E6%B5%8B%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/38122008?v=4">
+      <meta itemprop="name" content="zllz4">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZLLZ4's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NexT 主题语法测试
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-08 22:53:51" itemprop="dateCreated datePublished" datetime="2022-01-08T22:53:51+08:00">2022-01-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-01-09 14:10:01" itemprop="dateModified" datetime="2022-01-09T14:10:01+08:00">2022-01-09</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%BB%98%E8%AE%A4/" itemprop="url" rel="index"><span itemprop="name">默认</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文主要参考了<span class="exturl" data-url="aHR0cHM6Ly93d3cubWFya2Rvd24ueHl6Lw==">Markdown 指南<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv">hexo 官方文档<i class="fa fa-external-link-alt"></i></span> 、<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzLw==">NexT 主题官方文档<i class="fa fa-external-link-alt"></i></span> 和 <span class="exturl" data-url="aHR0cHM6Ly9lY2hhcnRzLmFwYWNoZS5vcmcvaGFuZGJvb2svemgvZ2V0LXN0YXJ0ZWQv">Echarts 官方文档<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="markdown-相关语法">1 Markdown 相关语法</h1>
+<h2 id="标题">1.1 标题</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+<h1 id="一级标题">一级标题</h1>
+<h2 id="二级标题">二级标题</h2>
+<h3 id="三级标题">三级标题</h3>
+<h4 id="四级标题">四级标题</h4>
+<h5 id="五级标题">五级标题</h5>
+<h6 id="六级标题">六级标题</h6>
+<h2 id="段落">1.2 段落</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这是段落1，这是<span class="strong">**粗体**</span>，这是<span class="emphasis">*斜体*</span>，这是<span class="code">`代码块`</span>，这是~~删除线~~，这是~下标~，这是^上标^</span><br><span class="line"></span><br><span class="line">这是段落2</span><br></pre></td></tr></table></figure>
+<p>这是段落1，这是<strong>粗体</strong>，这是<em>斜体</em>，这是<code>代码块</code>，这是<del>删除线</del>，这是<sub>下标</sub>，这是<sup>上标</sup></p>
+<p>这是段落2</p>
+<h2 id="列表">1.3 列表</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">*</span> 无序列表</span><br><span class="line"><span class="bullet">    *</span> 无序列表</span><br><span class="line"><span class="bullet">        *</span> 无序列表</span><br><span class="line"><span class="bullet">*</span> 无序列表</span><br><span class="line"><span class="bullet">*</span> 无序列表</span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> 有序列表</span><br><span class="line"><span class="bullet">    1.</span> 有序列表 </span><br><span class="line"><span class="bullet">        1.</span> 有序列表</span><br><span class="line"><span class="bullet">2.</span> 有序列表</span><br><span class="line"><span class="bullet">3.</span> 有序列表</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>无序列表
+<ul>
+<li>无序列表
+<ul>
+<li>无序列表</li>
+</ul></li>
+</ul></li>
+<li>无序列表</li>
+<li>无序列表</li>
+</ul>
+<ol type="1">
+<li>有序列表
+<ol type="1">
+<li>有序列表
+<ol type="1">
+<li>有序列表</li>
+</ol></li>
+</ol></li>
+<li>有序列表</li>
+<li>有序列表</li>
+</ol>
+<h2 id="表格">1.4 表格</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| col1 | col2 | col3 |</span><br><span class="line">| :------ | :------: | ------: |</span><br><span class="line">|  左对齐    |   中对齐   |   右对齐   |</span><br><span class="line">|   左对齐   |    中对齐 | 右对齐     |</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">col1</th>
+<th style="text-align: center;">col2</th>
+<th style="text-align: right;">col3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">左对齐</td>
+<td style="text-align: center;">中对齐</td>
+<td style="text-align: right;">右对齐</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">左对齐</td>
+<td style="text-align: center;">中对齐</td>
+<td style="text-align: right;">右对齐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="图片">1.5 图片</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](/assets/hexo<span class="emphasis">_resource_</span>77b0987b8854403e86cdb871c82caa6e.png)</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png" /></p>
+<h2 id="外链">1.6 外链</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">百度</span>](<span class="link">https://www.baidu.com/</span>)</span><br></pre></td></tr></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmFpZHUuY29tLw==">百度<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="块引用">1.7 块引用</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 引用一句话</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>引用一句话</p>
+</blockquote>
+<h2 id="代码块">1.8 代码块</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```c</span></span><br><span class="line"><span class="code">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">int main()</span></span><br><span class="line"><span class="code">&#123;</span></span><br><span class="line"><span class="code">    printf(&quot;Hello World!\n&quot;);</span></span><br><span class="line"><span class="code">&#125;</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Markdown 中代码块反引号 <code>`</code> 的转义问题可以参考<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLndhbHRlcmx2LmNvbS9wb3N0L21hcmtkb3duLWNvZGUtZXNjYXBlLWJhY2t0aWNrLmh0bWw=">此文章<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="分割线">1.9 分割线</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="数学公式">1.10 数学公式</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">inline: $E=mc^2$</span><br><span class="line"></span><br><span class="line">eq block:</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">e^&#123;i\pi&#125;+1=0</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>inline: <span class="math inline">\(E=mc^2\)</span></p>
+<p>eq block:</p>
+<p><span class="math display">\[
+e^{i\pi}+1=0
+\]</span></p>
+<h1 id="hexo-特色语法">2 Hexo 特色语法</h1>
+<h2 id="块引用支持作者链接">2.1 块引用（支持作者/链接）</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote 赴戍登程口占示家人-林则徐 https://baike.baidu.com/item/%E8%B5%B4%E6%88%8D%E7%99%BB%E7%A8%8B%E5%8F%A3%E5%8D%A0%E7%A4%BA%E5%AE%B6%E4%BA%BA 百度百科 %&#125;</span><br><span class="line">苟利国家生死以，岂因祸福避趋之</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+<blockquote><p>苟利国家生死以，岂因祸福避趋之</p>
+<footer><strong>赴戍登程口占示家人-林则徐</strong><cite><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTglQjUlQjQlRTYlODglOEQlRTclOTklQkIlRTclQTglOEIlRTUlOEYlQTMlRTUlOEQlQTAlRTclQTQlQkElRTUlQUUlQjYlRTQlQkElQkE=">百度百科<i class="fa fa-external-link-alt"></i></span></cite></footer></blockquote>
+<h2 id="代码块支持文件名链接">2.2 代码块（支持文件名/链接）</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock hello.c lang:c https://www.runoob.com/cprogramming/c-tutorial.html 菜鸟教程 %&#125;</span><br><span class="line">printf(&quot;Hello World!\n&quot;);</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><figcaption><span>hello.c</span><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jcHJvZ3JhbW1pbmcvYy10dXRvcmlhbC5odG1s">菜鸟教程<i class="fa fa-external-link-alt"></i></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="iframe">2.3 iframe</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% iframe https://www.geogebra.org/calculator 100% 500 %&#125;</span><br></pre></td></tr></table></figure>
+<iframe src="https://www.geogebra.org/calculator" width="100%" height="500" frameborder="0" loading="lazy" allowfullscreen></iframe>
+<blockquote>
+<p>左上输入函数（比如 sin(x)）绘制曲线</p>
+</blockquote>
+<h1 id="next-主题特色语法">3 NexT 主题特色语法</h1>
+<h2 id="中心引用新的块引用样式">3.1 中心引用（新的块引用样式）</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% cq %&#125; Center Quote &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+<blockquote class="blockquote-center">
+<p>Center Quote</p>
+
+</blockquote>
+<h2 id="视频">3.2 视频</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% video https://www.w3school.com.cn/example/html5/mov<span class="emphasis">_bbb.mp4 %&#125;</span></span><br></pre></td></tr></table></figure>
+<video src="https://www.w3school.com.cn/example/html5/mov_bbb.mp4" preload="metadata" controlslist="nodownload" controls playsinline poster=""></video>
+<h2 id="按钮">3.3 按钮</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% btn https://www.apple.com.cn/, apple, fab fa-apple fa-fw %&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>图标来自 <span class="exturl" data-url="aHR0cHM6Ly9mb250YXdlc29tZS5jb20vdjUuMTUvaWNvbnMvYXBwbGU/c3R5bGU9YnJhbmRz">fontawesome<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<a class="btn" target="_blank" rel="noopener" href="https://www.apple.com.cn/"><i class="fab fa-apple fa-fw"></i>apple</a>
+<h2 id="caniuse">3.4 Caniuse</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% can mpeg4 %&#125;</span><br><span class="line">&#123;% can hevc %&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>下图展示了 H.264 和 H.265 被各个浏览器的支持情况，可以看到目前大部分浏览器还是不支持 H.265，数据来自 <span class="exturl" data-url="aHR0cHM6Ly9jYW5pdXNlLmNvbS8=">caniuse<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<iframe data-feature="mpeg4" src="https://caniuse.bitsofco.de/embed/index.html?feat=mpeg4&periods=current&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>
+<iframe data-feature="hevc" src="https://caniuse.bitsofco.de/embed/index.html?feat=hevc&periods=current&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>
+<div class="note info"><p>如果显示 Feature not found，可以试下以下两个网站能否正常显示：<span class="exturl" data-url="aHR0cHM6Ly9jYW5pdXNlLmJpdHNvZmNvLmRlL2VtYmVkL2luZGV4Lmh0bWw/ZmVhdD1tcGVnNCZwZXJpb2RzPWN1cnJlbnQmYWNjZXNzaWJsZS1jb2xvdXJzPWZhbHNl">can mpeg4<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9jYW5pdXNlLmJpdHNvZmNvLmRlL2VtYmVkL2luZGV4Lmh0bWw/ZmVhdD1oZXZjJnBlcmlvZHM9Y3VycmVudCZhY2Nlc3NpYmxlLWNvbG91cnM9ZmFsc2U=">can hevc<i class="fa fa-external-link-alt"></i></span></p>
+</div>
+<h2 id="group-pictures">3.5 Group Pictures</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gp 3-3 %&#125;</span><br><span class="line">![](/assets/hexo<span class="emphasis">_resource_</span>77b0987b8854403e86cdb871c82caa6e.png)</span><br><span class="line">![](/assets/hexo<span class="emphasis">_resource_</span>77b0987b8854403e86cdb871c82caa6e.png)</span><br><span class="line">![](/assets/hexo<span class="emphasis">_resource_</span>77b0987b8854403e86cdb871c82caa6e.png)</span><br><span class="line">&#123;% endgp %&#125;  </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的 3-3 是指选择 <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL2dyb3VwLXBpY3R1cmVzLmh0bWw=">这里<i class="fa fa-external-link-alt"></i></span> &quot;03x&quot; 行的第三个布局</p>
+</blockquote>
+<div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img src="/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png" /></div><div class="group-picture-column"><img src="/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png" /></div><div class="group-picture-column"><img src="/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png" /></div></div></div>
+<h2 id="label">3.6 Label</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label @黄色 %&#125;&#123;% label primary@紫色 %&#125;&#123;% label success@绿色 %&#125;&#123;% label info@蓝色 %&#125;&#123;% label warning@淡黄褐色 %&#125;&#123;% label danger@红色 %&#125;</span><br></pre></td></tr></table></figure>
+<mark class="label ">黄色</mark>
+<mark class="label primary">紫色</mark>
+<mark class="label success">绿色</mark>
+<mark class="label info">蓝色</mark>
+<mark class="label warning">淡黄褐色</mark>
+<mark class="label danger">红色</mark>
+<h2 id="link-grid">3.7 Link Grid</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% linkgrid %&#125;</span><br><span class="line">皮卡丘 | https://baike.baidu.com/item/%E7%9A%AE%E5%8D%A1%E4%B8%98/931437 | Pikachu | /assets/hexo<span class="emphasis">_resource_</span>77b0987b8854403e86cdb871c82caa6e.png</span><br><span class="line">皮卡丘 | https://baike.baidu.com/item/%E7%9A%AE%E5%8D%A1%E4%B8%98/931437 | Pikachu | /assets/hexo<span class="emphasis">_resource_</span>77b0987b8854403e86cdb871c82caa6e.png</span><br><span class="line">皮卡丘 | https://baike.baidu.com/item/%E7%9A%AE%E5%8D%A1%E4%B8%98/931437 | Pikachu | /assets/hexo<span class="emphasis">_resource_</span>77b0987b8854403e86cdb871c82caa6e.png</span><br><span class="line">皮卡丘 | https://baike.baidu.com/item/%E7%9A%AE%E5%8D%A1%E4%B8%98/931437 | Pikachu | /assets/hexo<span class="emphasis">_resource_</span>77b0987b8854403e86cdb871c82caa6e.png</span><br><span class="line">&#123;% endlinkgrid %&#125;</span><br></pre></td></tr></table></figure>
+<div class="link-grid"><div class="link-grid-container">
+<object class="link-grid-image" data="/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png"></object>
+<p>皮卡丘</p><p>Pikachu</p>
+<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%9A%AE%E5%8D%A1%E4%B8%98/931437"></a>
+</div><div class="link-grid-container">
+<object class="link-grid-image" data="/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png"></object>
+<p>皮卡丘</p><p>Pikachu</p>
+<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%9A%AE%E5%8D%A1%E4%B8%98/931437"></a>
+</div><div class="link-grid-container">
+<object class="link-grid-image" data="/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png"></object>
+<p>皮卡丘</p><p>Pikachu</p>
+<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%9A%AE%E5%8D%A1%E4%B8%98/931437"></a>
+</div><div class="link-grid-container">
+<object class="link-grid-image" data="/assets/hexo_resource_77b0987b8854403e86cdb871c82caa6e.png"></object>
+<p>皮卡丘</p><p>Pikachu</p>
+<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%9A%AE%E5%8D%A1%E4%B8%98/931437"></a>
+</div></div>
+<h2 id="mermaid">3.8 Mermaid</h2>
+<p>报错如下，暂时没解决</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mermaid.js:<span class="number">15</span> Uncaught (<span class="keyword">in</span> promise) <span class="built_in">TypeError</span>: mermaid.initialize is not a <span class="function"><span class="keyword">function</span></span></span><br><span class="line"><span class="function">    <span class="title">at</span> <span class="title">mermaid</span>.<span class="title">js</span>:15:15</span></span><br></pre></td></tr></table></figure>
+<h2 id="note">3.9 Note</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note %&#125;</span><br><span class="line">raw</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note default%&#125;</span><br><span class="line">default</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;</span><br><span class="line">primary</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;</span><br><span class="line">info</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;</span><br><span class="line">success</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;</span><br><span class="line">warning</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">danger</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note no-icon %&#125;</span><br><span class="line">no icon</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success 大象放进冰箱的步骤 %&#125;</span><br><span class="line"><span class="bullet">1.</span> 打开冰箱</span><br><span class="line"><span class="bullet">2.</span> 把大象放进去</span><br><span class="line"><span class="bullet">3.</span> 关上冰箱</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="note "><p>raw</p>
+</div>
+<div class="note default"><p>default</p>
+</div>
+<div class="note primary"><p>primary</p>
+</div>
+<div class="note info"><p>info</p>
+</div>
+<div class="note success"><p>success</p>
+</div>
+<div class="note warning"><p>warning</p>
+</div>
+<div class="note danger"><p>danger</p>
+</div>
+<div class="note no-icon"><p>no icon</p>
+</div>
+<details class="note default"><summary><p>大象放进冰箱的步骤</p>
+</summary>
+<ol type="1">
+<li>打开冰箱</li>
+<li>把大象放进去</li>
+<li>关上冰箱</li>
+</ol>
+
+</details>
+<h2 id="pdf">3.10 PDF</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% pdf https://isotropic.org/papers/chicken.pdf %&#125;</span><br></pre></td></tr></table></figure>
+<div class="pdf-container" data-target="https://isotropic.org/papers/chicken.pdf" data-height="500px"></div>
+<blockquote>
+<p>根据<span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzM3Nzk5NTE0">知乎<i class="fa fa-external-link-alt"></i></span>还有个 <span class="exturl" data-url="aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj15TF8tMWQ5T1Nkaw==">Youtube 视频<i class="fa fa-external-link-alt"></i></span>，贼搞笑</p>
+</blockquote>
+<h2 id="tabs">3.11 Tabs</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs Tabs, 1 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">Tab1 示例</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab other name --&gt;</span><br><span class="line">Tab2 示例</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab @fab fa-apple --&gt;</span><br><span class="line">Tab3 示例</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第一行的 1 表示默认 tab 1 激活，改成 -1 则表示默认不激活任何 tab</p>
+</blockquote>
+<div class="tabs" id="tabs"><ul class="nav-tabs"><li class="tab active"><a href="#tabs-1">Tabs 1</a></li><li class="tab"><a href="#tabs-2">other name</a></li><li class="tab"><a href="#tabs-3"><i class="fab fa-apple"></i></a></li></ul><div class="tab-content"><div class="tab-pane active" id="tabs-1"><p>Tab1 示例</p></div><div class="tab-pane" id="tabs-2"><p>Tab2 示例</p></div><div class="tab-pane" id="tabs-3"><p>Tab3 示例</p></div></div></div>
+<h1 id="echarts-图表绘制语法">4 Echarts 图表绘制语法</h1>
+<p>Echarts 功能的启用首先需要安装 <code>hexo-tag-echarts3</code> 模块，可通过如下指令安装</p>
+<figure class="highlight bash"><figcaption><span>安装指令</span><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tjaGVuMHgvaGV4by10YWctZWNoYXJ0czM=">插件仓库<i class="fa fa-external-link-alt"></i></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-echarts --save</span><br></pre></td></tr></table></figure>
+<p>然后修改 <code>node_modules\hexo-tag-echarts\echarts-template.html</code> 文件的内容，导入 echarts 的 js 文件</p>
+<figure class="highlight html"><figcaption><span>echarts-template.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;&lt;%- id %&gt;&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: &lt;%- width %&gt;;height: &lt;%- height %&gt;px;margin: 0 auto&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 加入这一行导入 echarts 的 js 文件，如果 echarts 有更新那么把这个链接换成更新后的 js 链接即可 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这两步完成变可按照下述语法使用 echarts 的图表绘制功能</p>
+<h2 id="柱状图">4.1 柱状图</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;% echarts %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    tooltip : &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;axis&#x27;,</span></span><br><span class="line"><span class="code">        axisPointer: &#123; type: &#x27;shadow&#x27; &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend : &#123;&#125;,</span></span><br><span class="line"><span class="code">    xAxis : &#123;</span></span><br><span class="line"><span class="code">        name : &#x27;学生&#x27;,</span></span><br><span class="line"><span class="code">        data : [&#x27;小明&#x27;,&#x27;小刚&#x27;,&#x27;小红&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    yAxis : &#123;</span></span><br><span class="line"><span class="code">        name : &#x27;成绩&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">        type : &#x27;bar&#x27;,</span></span><br><span class="line"><span class="code">        name : &#x27;考试1&#x27;,</span></span><br><span class="line"><span class="code">        data : [70, 80, 66]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">        type : &#x27;bar&#x27;,</span></span><br><span class="line"><span class="code">        name : &#x27;考试2&#x27;,</span></span><br><span class="line"><span class="code">        data : [84, 72, 100]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+<div id="echarts8860" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts8860'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' }
+    },
+    legend : {},
+    xAxis : {
+        name : '学生',
+        data : ['小明','小刚','小红']
+    },
+    yAxis : {
+        name : '成绩'
+    },
+    series : [
+        {
+        type : 'bar',
+        name : '考试1',
+        data : [70, 80, 66]
+        },
+        {
+        type : 'bar',
+        name : '考试2',
+        data : [84, 72, 100]
+        }
+    ]
+};
+
+        // 显示 loading 动画
+        myChart.showLoading();
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        // loading 完毕后隐藏 loading 动画
+        myChart.hideLoading();
+</script>
+<h2 id="折线图">4.2 折线图</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;% echarts %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    tooltip : &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;axis&#x27;,</span></span><br><span class="line"><span class="code">        axisPointer: &#123; type: &#x27;cross&#x27; &#125;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend : &#123;&#125;,</span></span><br><span class="line"><span class="code">    xAxis : &#123;</span></span><br><span class="line"><span class="code">        name : &#x27;考试&#x27;,</span></span><br><span class="line"><span class="code">        data : [&#x27;考试1&#x27;,&#x27;考试2&#x27;,&#x27;考试3&#x27;,&#x27;考试4&#x27;,&#x27;咋那么多考试&#x27;]</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    yAxis : &#123;</span></span><br><span class="line"><span class="code">        name : &#x27;成绩&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">        type : &#x27;line&#x27;,</span></span><br><span class="line"><span class="code">        name : &#x27;小明&#x27;,</span></span><br><span class="line"><span class="code">        data : [71, 90, 85, 86, 99]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">        type : &#x27;line&#x27;,</span></span><br><span class="line"><span class="code">        name : &#x27;小红&#x27;,</span></span><br><span class="line"><span class="code">        data : [100, 70, 96, 80, 85]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+<div id="echarts4187" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts4187'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    tooltip : {
+        trigger: 'axis',
+        axisPointer: { type: 'cross' }
+    },
+    legend : {},
+    xAxis : {
+        name : '考试',
+        data : ['考试1','考试2','考试3','考试4','咋那么多考试']
+    },
+    yAxis : {
+        name : '成绩'
+    },
+    series : [
+        {
+        type : 'line',
+        name : '小明',
+        data : [71, 90, 85, 86, 99]
+        },
+        {
+        type : 'line',
+        name : '小红',
+        data : [100, 70, 96, 80, 85]
+        }
+    ]
+};
+
+        // 显示 loading 动画
+        myChart.showLoading();
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        // loading 完毕后隐藏 loading 动画
+        myChart.hideLoading();
+</script>
+<h2 id="饼图">4.3 饼图</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;% echarts %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    tooltip : &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;item&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    series : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;pie&#x27;,</span></span><br><span class="line"><span class="code">            radius : &#x27;80%&#x27;,</span></span><br><span class="line"><span class="code">            data : </span></span><br><span class="line"><span class="code">            [</span></span><br><span class="line"><span class="code">                &#123;</span></span><br><span class="line"><span class="code">                    name : &#x27;甜豆脑好吃&#x27;,</span></span><br><span class="line"><span class="code">                    value : 49</span></span><br><span class="line"><span class="code">                &#125;,</span></span><br><span class="line"><span class="code">                &#123;</span></span><br><span class="line"><span class="code">                    name : &#x27;咸豆腐脑好吃&#x27;,</span></span><br><span class="line"><span class="code">                    value : 51</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            ]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+<div id="echarts1338" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts1338'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    tooltip : {
+        trigger: 'item'
+    },
+    series : [
+        {
+            type : 'pie',
+            radius : '80%',
+            data : 
+            [
+                {
+                    name : '甜豆脑好吃',
+                    value : 49
+                },
+                {
+                    name : '咸豆腐脑好吃',
+                    value : 51
+                }
+            ]
+        }
+    ]
+};
+
+        // 显示 loading 动画
+        myChart.showLoading();
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        // loading 完毕后隐藏 loading 动画
+        myChart.hideLoading();
+</script>
+<h2 id="散点图">4.4 散点图</h2>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123;% echarts %&#125;</span><br><span class="line">&#123;</span><br><span class="line"><span class="code">    tooltip : &#123;</span></span><br><span class="line"><span class="code">        trigger: &#x27;item&#x27;</span></span><br><span class="line"><span class="code">    &#125;,</span></span><br><span class="line"><span class="code">    legend : &#123;&#125;,</span></span><br><span class="line"><span class="code">    xAxis : &#123;&#125;,</span></span><br><span class="line"><span class="code">    yAxis : &#123;&#125;,</span></span><br><span class="line"><span class="code">    series : [</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;scatter&#x27;,</span></span><br><span class="line"><span class="code">            name : &#x27;采样数据组1&#x27;,</span></span><br><span class="line"><span class="code">            data : [</span></span><br><span class="line"><span class="code">                [1,2],</span></span><br><span class="line"><span class="code">                [5,7],</span></span><br><span class="line"><span class="code">                [10,13],</span></span><br><span class="line"><span class="code">                [20,25]</span></span><br><span class="line"><span class="code">            ]</span></span><br><span class="line"><span class="code">        &#125;,</span></span><br><span class="line"><span class="code">        &#123;</span></span><br><span class="line"><span class="code">            type : &#x27;scatter&#x27;,</span></span><br><span class="line"><span class="code">            name : &#x27;采样数据组2&#x27;,</span></span><br><span class="line"><span class="code">            data : [</span></span><br><span class="line"><span class="code">                [2,3],</span></span><br><span class="line"><span class="code">                [4,5],</span></span><br><span class="line"><span class="code">                [23,7],</span></span><br><span class="line"><span class="code">                [16,50]</span></span><br><span class="line"><span class="code">            ]</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    ]</span></span><br><span class="line"><span class="code">&#125;;</span></span><br><span class="line"><span class="code">&#123;% endecharts %&#125;</span></span><br></pre></td></tr></table></figure>
+<div id="echarts8172" style="width: 81%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts8172'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    tooltip : {
+        trigger: 'item'
+    },
+    legend : {},
+    xAxis : {},
+    yAxis : {},
+    series : [
+        {
+            type : 'scatter',
+            name : '采样数据组1',
+            data : [
+                [1,2],
+                [5,7],
+                [10,13],
+                [20,25]
+            ]
+        },
+        {
+            type : 'scatter',
+            name : '采样数据组2',
+            data : [
+                [2,3],
+                [4,5],
+                [23,7],
+                [16,50]
+            ]
+        }
+    ]
+};
+
+        // 显示 loading 动画
+        myChart.showLoading();
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        // loading 完毕后隐藏 loading 动画
+        myChart.hideLoading();
+</script>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zllz4</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">8k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">7 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.7/pdfobject.min.js","integrity":"sha256-ph3Dk89VmuTVXG6x/RDzk53SU9LPdAh1tpv0UvnDZ2I="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"dark"},"js":{"url":"https://cdn.jsdelivr.net/npm/mermaid@8.13.4/dist/mermaid.min.js","integrity":"sha256-96rwDGMWIQYB0yKGp1sKi1yrjrLPj2oT39IpbCsIrsg="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
